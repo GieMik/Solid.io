@@ -2,6 +2,7 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+// const fallback = require('fallback-loader')
 
 function resolve(dir) {
 	return path.join(__dirname, '..', dir)
@@ -26,7 +27,12 @@ module.exports = {
 			'@assets': resolve('src/assets'),
 			'@configs': resolve('src/configs'),
 			'@helpers': resolve('src/helpers'),
-			'@pages': resolve('src/pages')
+			'@pages': resolve('src/pages'),
+			'@styles': resolve('src/assets/styles'),
+			'@svgs': resolve('src/assets/svgs'),
+			'@fonts': resolve('src/assets/fonts'),
+			'@icons': resolve('src/assets/icons'),
+			'@images': resolve('src/assets/images')
 		}
 	},
 	module: {
@@ -58,6 +64,9 @@ module.exports = {
 				  name: utils.assetsPath('img/[name].[hash:7].[ext]')
 				}
 			},
+			// { 	test: /\.svg$/,
+			// 	loader: 'svg-loader'
+			// },
 			{
 				test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
 				loader: 'url-loader',

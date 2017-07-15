@@ -1,23 +1,23 @@
 <template>
 	<div id="app">
-		<img src="./assets/logo.png">
+		<img :src="logo" alt="Solid">
 		<router-view></router-view>
 	</div>
 </template>
 
 <script>
+	import Logo from '@svgs/Solid.svg'
+
 	export default {
-		name: 'app'
+		data() {
+			return {
+				logo: Logo
+			}
+		},
+		created() {
+			console.log(Logo)
+		}
 	}
 </script>
 
-<style>
-	#app {
-		font-family: 'Avenir', Helvetica, Arial, sans-serif;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		text-align: center;
-		color: #2c3e50;
-		margin-top: 60px;
-	}
-</style>
+<style lang="scss" src="@styles/style.scss"></style>

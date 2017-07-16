@@ -1,0 +1,95 @@
+// ------------------------- Font Imports | @font-face ----------------------
+
+@font-face {
+	font-family: 'cream-DEMO';
+	src: url('../fonts/cream/cream-DEMO.otf') format('opentype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Bitter';
+	src: url('../fonts/bitter/Bitter-Regular.otf') format('opentype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Bitter';
+	src: url('../fonts/bitter/Bitter-Italic.otf') format('opentype');
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Bitter';
+	src: url('../fonts/bitter/Bitter-Bold.otf') format('opentype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Bitter';
+	src: url('../fonts/bitter/Bitter-BoldItalic.otf') format('opentype');
+	font-weight: 700;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Aller';
+	src: url('../fonts/aller/Aller_Rg.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Aller';
+	src: url('../fonts/aller/Aller_It.ttf') format('truetype');
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Aller';
+	src: url('../fonts/aller/Aller_Bd.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Aller';
+	src: url('../fonts/aller/Aller_BdIt.ttf') format('truetype');
+	font-weight: 700;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Aller';
+	src: url('../fonts/aller/Aller_Lt.ttf') format('truetype');
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Aller';
+	src: url('../fonts/aller/Aller_LtIt.ttf') format('truetype');
+	font-weight: 200;
+	font-style: italic;
+}
+
+// ------------------------- Text tags style --------------------------------
+
+@for $h from 1 through 6 {
+	h#{$h} {
+		font-family: 'Aller', Helvetica, Arial, sans-serif;
+		font-weight: 700;
+	}
+}
+
+p,
+a,
+i,
+ul li {
+	font-family: 'Bitter', Helvetica, Arial, sans-serif;
+	font-weight: 400;
+}

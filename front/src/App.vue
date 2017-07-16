@@ -1,12 +1,12 @@
 <template>
 	<div id="app">
-		<img :src="logo" alt="Solid">
+		<logo></logo>
 		<router-view></router-view>
 	</div>
 </template>
 
 <script>
-	import Logo from '@svgs/Solid.svg'
+	import Logo from '@components/Logo'
 
 	export default {
 		data() {
@@ -14,8 +14,8 @@
 				logo: Logo
 			}
 		},
-		created() {
-			console.log(Logo)
+		components: {
+			Logo
 		}
 	}
 </script>

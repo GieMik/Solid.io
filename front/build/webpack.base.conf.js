@@ -32,7 +32,8 @@ module.exports = {
 			'@svgs': resolve('src/assets/svgs'),
 			'@fonts': resolve('src/assets/fonts'),
 			'@icons': resolve('src/assets/icons'),
-			'@images': resolve('src/assets/images')
+			'@images': resolve('src/assets/images'),
+			'@components': resolve('src/components')
 		}
 	},
 	module: {

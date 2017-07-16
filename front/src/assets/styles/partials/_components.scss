@@ -61,3 +61,50 @@ ul, ol {
 		margin: 10px 0;
 	}
 }
+
+.login-page-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.form-wrapper {
+	background-color: $F;
+	//border: solid 1px $c2;
+
+	&.form-md {
+		width: 500px;
+	}
+
+	.form-header {
+		padding:  15px 20px;
+		background-color: $c2;
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+	}
+
+	.form-title {
+		color: $F;
+	}
+
+	.form-body {
+		padding:  15px 20px;
+		border: solid 1px $c2;
+		border-bottom: none;
+	}
+
+	.form-footer {
+		background-color: $light;
+		border: solid 1px $c2;
+		border-top: none;
+		border-bottom-left-radius: 5px;
+		border-bottom-right-radius: 5px;
+	}
+
+	.form-footer {
+		padding:  15px 20px;
+		text-align: center;
+	}
+}

@@ -21,4 +21,13 @@
 
 .page-title {
 	color: $c2;
+	font-weight: 700;
+}
+
+path {
+	transition: $pageTrans;
+
+	&:hover {
+		transition: $pageTrans;
+	}
 }

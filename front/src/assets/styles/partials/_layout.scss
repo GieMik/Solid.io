@@ -16,7 +16,8 @@ body {
 .left-bar,
 .top-bar,
 .right-bar,
-.footer {
+.footer,
+.account-toggle {
 	border-style: solid;
 	border-width: 0;
 	border-color: darken($light, 10%);
@@ -37,24 +38,70 @@ body {
 }
 
 .right-bar {
-	grid-row: 1 / 4;
+	grid-row: 2 / 4;
+	grid-column: 3;
+	background-color: $c2;
+	border-left-width: 1px;
+	z-index: 40;
+}
+
+.account-toggle {
+	grid-row: 1;
 	grid-column: 3;
 	border-left-width: 1px;
-	//opacity: 0;
-	//pointer-events: none;
+	//background-color: $c2;
+	transition: $pageTrans;
+	z-index: 40;
+
+	.account-toggle-icon {
+		height: 70%;
+	}
+
+	.circle {
+		fill: $F;
+	}
+
+	.cls-2, .cls-3 {
+		fill: #9068be;
+	}
+
+	.user {
+		fill: $c2;
+	}
+
+	.cls-2 {
+		opacity: 0.1;
+	}
+
+	&:hover,
+	&.open {
+		background-color: $c2;
+		transition: $pageTrans;
+		cursor: pointer;
+
+		.user {
+			fill: $F;
+		}
+
+		.circle {
+			fill: transparent;
+		}
+	}
 }
 
 .content {
-	grid-row: 2 / 4;
+	grid-row: 2 / 3;
 	grid-column: 2 / 4;
+	padding: 15px 0;
 	//background-color: yellow;
 }
 
 .footer {
 	grid-row: 3 / 4;
-	grid-column: 2 / 3;
+	grid-column: 2 / 4;
 	//border-top: solid 1px darken($light, 15%);
-	border-top-width: 1px
+	border-top-width: 1px;
+	padding-right: 15px; // FIX ME
 	//background-color: black;
 }
 
@@ -66,11 +113,7 @@ body {
 	height: 100%;
 	background-color: $light;
 	grid-column-gap: 15px;
-	grid-row-gap: 30px;
-	grid-template-areas:
-		'left top right'
-		'left center right'
-		'left bottom bottom';
+	//grid-row-gap: 30px;
 }
 
 .flex-inner {
@@ -94,33 +137,3 @@ body {
 		flex-direction: row;
 	}
 }
-
-//.top {
-//	grid-area: top;
-//	background-color: red;
-//	opacity: .6;
-//}
-//
-//.left {
-//	grid-area: left;
-//	background-color: blue;
-//	opacity: .6;
-//}
-//
-//.right {
-//	grid-area: right;
-//	background-color: green;
-//	opacity: .6;
-//}
-//
-//.bottom {
-//	grid-area: bottom;
-//	background-color: yellow;
-//	opacity: .6;
-//}
-//
-//.center {
-//	grid-area: center;
-//	background-color: black;
-//	opacity: .6;
-//}

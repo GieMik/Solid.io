@@ -19,6 +19,26 @@
 	flex-grow: 1;
 }
 
+.right-menu-wrapper {
+	text-align: center;
+	flex-basis: 100%;
+	padding: 0 15px;
+	display: flex;
+	flex-direction: column;
+
+	.p-info {
+		color: $F;
+		font-size: 0.8em;
+		font-weight: 200;
+	}
+
+	.menu {
+		a {
+			color: $F;
+		}
+	}
+}
+
 .site-info-wrapper {
 	height: $bottomHeight;
 }
@@ -34,6 +54,8 @@ ul, ol {
 }
 
 .menu {
+	text-align: center;
+
 	.m-item {
 		display: block;
 		margin: 10px 0;

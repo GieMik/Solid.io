@@ -13,39 +13,40 @@
 					<top-header></top-header>
 				</div>
 			</div>
-			<div class="right-bar">
+			<div v-if="interface.rightBar.visible" class="right-bar">
 				<div class="flex-inner">
-
+					<right-menu></right-menu>
+				</div>
+			</div>
+			<div :class="{ 'open': interface.rightBar.visible }" class="account-toggle">
+				<div @click="openRightBar" class="flex-inner flex-center">
+					<account-toggle ></account-toggle>
 				</div>
 			</div>
 			<div class="content">
-				<!--<div class="flex-inner">-->
-					<transition name="fade" mode="out-in">
-						<router-view></router-view>
-					</transition>
-				<!--</div>-->
+				<transition name="fade" mode="out-in">
+					<router-view></router-view>
+				</transition>
 			</div>
 			<div class="footer">
 				<div class="flex-inner flex-end">
 					<footer-info></footer-info>
 				</div>
 			</div>
-
-			<!--<div class="left"></div>-->
-			<!--<div class="top"></div>-->
-			<!--<div class="right"></div>-->
-			<!--<div class="bottom"></div>-->
-			<!--<div class="center"></div>-->
 		</div>
 	</div>
 </template>
 
 <script>
+	import { mapState } from 'vuex'
+
 	import Logo from '@components/Logo'
 	import LeftMenu from '@components/LeftMenu'
+	import RightMenu from '@components/RightMenu'
 	import SiteInfo from '@components/SiteInfo'
 	import TopHeader from '@components/TopHeader'
 	import FooterInfo from '@components/FooterInfo'
+	import AccountToggle from '@components/AccountToggle'
 
 	export default {
 		data() {
@@ -56,9 +57,21 @@
 		components: {
 			Logo,
 			LeftMenu,
+			RightMenu,
 			SiteInfo,
 			TopHeader,
-			FooterInfo
+			FooterInfo,
+			AccountToggle
+		},
+		computed: {
+			...mapState({
+				interface: state => state.interfaceStore
+			})
+		},
+		methods: {
+			openRightBar() {
+				this.$store.dispatch('setRightBarVisible', true)
+			}
 		}
 	}
 </script>

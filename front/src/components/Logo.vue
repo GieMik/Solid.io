@@ -9,7 +9,7 @@
 	</div>
 </template>
 
-<style lang="css" type="text/css">
+<style lang="css" type="text/css" scoped>
 
 	.st0{
 		fill: #55585D;

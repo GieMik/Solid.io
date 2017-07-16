@@ -79,6 +79,16 @@
 
 // ------------------------- Text tags style --------------------------------
 
+.serif {
+	font-family: 'Bitter', Helvetica, Arial, serif;
+	font-weight: 400;
+}
+
+.sans-serif {
+	font-family: 'Aller', Helvetica, Arial, sans-serif;
+	font-weight: 700;
+}
+
 * {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -95,7 +105,7 @@
 p,
 a,
 i {
-	font-family: 'Bitter', Helvetica, Arial, sans-serif;
+	font-family: 'Bitter', Helvetica, Arial, serif;
 	font-weight: 400;
 }
 

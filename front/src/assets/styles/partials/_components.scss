@@ -1,0 +1,41 @@
+// ------------------------- Components -------------------------------------
+
+.logo-wrapper {
+	//flex-basis: 100%;
+	//flex-shrink: 0;
+	//padding: 15px;
+	//width: 100%;
+	height: $topHeight;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	svg {
+		width: 130px;
+	}
+}
+
+.left-menu-wrapper {
+	flex-grow: 1;
+}
+
+.site-info-wrapper {
+	height: $bottomHeight;
+}
+
+ul, ol {
+	list-style-type: none;
+	padding: 0;
+
+	li, a {
+		font-family: 'Aller', Helvetica, Arial, sans-serif;
+		font-weight: 700;
+	}
+}
+
+.menu {
+	.m-item {
+		display: block;
+		margin: 10px 0;
+	}
+}

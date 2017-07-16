@@ -1,0 +1,126 @@
+// ------------------------- Layout -----------------------------------------
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	& > div {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.left-bar,
+.top-bar,
+.right-bar,
+.footer {
+	border-style: solid;
+	border-width: 0;
+	border-color: darken($light, 10%);
+}
+
+.left-bar {
+	grid-row: 1 / 4;
+	grid-column: 1;
+	border-right-width: 1px
+	//background-color: red;
+}
+
+.top-bar {
+	grid-row: 1;
+	grid-column: 2 / 4;
+	border-bottom-width: 1px
+	//background-color: blue;
+}
+
+.right-bar {
+	grid-row: 1 / 4;
+	grid-column: 3;
+	border-left-width: 1px;
+	//opacity: 0;
+	//pointer-events: none;
+}
+
+.content {
+	grid-row: 2 / 4;
+	grid-column: 2 / 4;
+	//background-color: yellow;
+}
+
+.footer {
+	grid-row: 3 / 4;
+	grid-column: 2 / 3;
+	//border-top: solid 1px darken($light, 15%);
+	border-top-width: 1px
+	//background-color: black;
+}
+
+.body-wrapper {
+	display: grid;
+	grid-template-columns: 220px auto 200px;
+	grid-template-rows: $topHeight auto $bottomHeight;
+	width: 100%;
+	height: 100%;
+	background-color: $light;
+	grid-column-gap: 15px;
+	grid-row-gap: 30px;
+	grid-template-areas:
+		'left top right'
+		'left center right'
+		'left bottom bottom';
+}
+
+.flex-inner {
+	display: flex;
+	width: 100%;
+	height: 100%;
+
+	$flex-inner: &;
+
+	&.vertical {
+		flex-direction: column;
+
+		@at-root #{$flex-inner}.vertical {
+			& > * {
+				//flex-basis: 100%;
+			}
+		}
+	}
+
+	&.horizontal {
+		flex-direction: row;
+	}
+}
+
+//.top {
+//	grid-area: top;
+//	background-color: red;
+//	opacity: .6;
+//}
+//
+//.left {
+//	grid-area: left;
+//	background-color: blue;
+//	opacity: .6;
+//}
+//
+//.right {
+//	grid-area: right;
+//	background-color: green;
+//	opacity: .6;
+//}
+//
+//.bottom {
+//	grid-area: bottom;
+//	background-color: yellow;
+//	opacity: .6;
+//}
+//
+//.center {
+//	grid-area: center;
+//	background-color: black;
+//	opacity: .6;
+//}

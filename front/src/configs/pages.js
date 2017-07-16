@@ -13,27 +13,36 @@ import ProfileEdit from '@pages/profile/ProfileEdit'
 const pages = [
 	{
 		path: '/',
-		title: 'Hello',
-		name: 'hello',
-		component: Hello
+		name: 'home',
+		component: Hello,
+		meta: {
+			title: 'Home'
+		}
 	},
 	{
 		path: '/login',
-		title: 'Login',
 		name: 'login',
-		component: Login
+		component: Login,
+		meta: {
+			title: 'Login'
+		}
 	},
 	{
 		path: '/register',
-		title: 'Register',
 		name: 'register',
-		component: Register
+		component: Register,
+		meta: {
+			title: 'Register'
+		}
 	},
 	{
 		path: '/logout',
 		title: 'Logout',
 		name: 'logout',
-		component: Logout
+		component: Logout,
+		meta: {
+			title: 'Logout'
+		}
 	},
 	{
 		path: '/users',
@@ -43,19 +52,28 @@ const pages = [
 				path: '',
 				component: UsersList,
 				title: 'Users list',
-				name: 'users-list'
+				name: 'users-list',
+				meta: {
+					title: 'Users'
+				}
 			},
 			{
 				path: ':id',
 				component: UserView,
 				title: 'User View',
-				name: 'user-view'
+				name: 'user-view',
+				meta: {
+					title: 'User View'
+				}
 			},
 			{
 				path: ':id/edit-user',
 				component: UserEdit,
 				title: 'User Edit',
-				name: 'user-edit'
+				name: 'user-edit',
+				meta: {
+					title: 'User Edit'
+				}
 			}
 		]
 	},

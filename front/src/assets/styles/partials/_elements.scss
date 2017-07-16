@@ -1,0 +1,24 @@
+// ------------------------- Elements ---------------------------------------
+
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-end {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.info-p {
+	font-size: 0.8em;
+	color: $dark;
+	font-family: 'Aller', Helvetica, Arial, sans-serif;
+	font-weight: 200;
+}
+
+.page-title {
+	color: $c2;
+}

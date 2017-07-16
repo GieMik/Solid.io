@@ -79,17 +79,31 @@
 
 // ------------------------- Text tags style --------------------------------
 
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 @for $h from 1 through 6 {
 	h#{$h} {
 		font-family: 'Aller', Helvetica, Arial, sans-serif;
 		font-weight: 700;
+		margin: 0;
 	}
 }
 
 p,
 a,
-i,
-ul li {
+i {
 	font-family: 'Bitter', Helvetica, Arial, sans-serif;
 	font-weight: 400;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul li a {
+	font-family: 'Aller', Helvetica, Arial, sans-serif;
+	font-weight: 700;
 }

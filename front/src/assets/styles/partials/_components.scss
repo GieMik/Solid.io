@@ -44,9 +44,6 @@
 }
 
 ul, ol {
-	list-style-type: none;
-	padding: 0;
-
 	li, a {
 		font-family: 'Aller', Helvetica, Arial, sans-serif;
 		font-weight: 700;
@@ -55,10 +52,12 @@ ul, ol {
 
 .menu {
 	text-align: center;
+	padding: 0;
+	list-style-type: none;
 
 	.m-item {
 		display: block;
-		margin: 10px 0;
+		margin: 20px 0;
 	}
 }
 

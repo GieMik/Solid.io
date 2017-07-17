@@ -9,6 +9,7 @@ import UserEdit from '@pages/user/UserEdit'
 import Profile from '@pages/profile/Profile'
 import ProfileReview from '@pages/profile/ProfileReview'
 import ProfileEdit from '@pages/profile/ProfileEdit'
+import TestField from '@pages/test-field/TestField'
 
 const pages = [
 	{
@@ -16,7 +17,8 @@ const pages = [
 		name: 'home',
 		component: Hello,
 		meta: {
-			title: 'Home'
+			title: 'Home',
+			location: 'main'
 		}
 	},
 	{
@@ -24,7 +26,8 @@ const pages = [
 		name: 'login',
 		component: Login,
 		meta: {
-			title: 'Login'
+			title: 'Login',
+			location: 'profile'
 		}
 	},
 	{
@@ -32,16 +35,17 @@ const pages = [
 		name: 'register',
 		component: Register,
 		meta: {
-			title: 'Register'
+			title: 'Register',
+			location: 'profile'
 		}
 	},
 	{
 		path: '/logout',
-		title: 'Logout',
 		name: 'logout',
 		component: Logout,
 		meta: {
-			title: 'Logout'
+			title: 'Logout',
+			location: 'profile'
 		}
 	},
 	{
@@ -51,28 +55,28 @@ const pages = [
 			{
 				path: '',
 				component: UsersList,
-				title: 'Users list',
 				name: 'users-list',
 				meta: {
-					title: 'Users'
+					title: 'Users',
+					location: 'main'
 				}
 			},
 			{
 				path: ':id',
 				component: UserView,
-				title: 'User View',
 				name: 'user-view',
 				meta: {
-					title: 'User View'
+					title: 'User View',
+					location: ''
 				}
 			},
 			{
 				path: ':id/edit-user',
 				component: UserEdit,
-				title: 'User Edit',
 				name: 'user-edit',
 				meta: {
-					title: 'User Edit'
+					title: 'User Edit',
+					location: ''
 				}
 			}
 		]
@@ -84,16 +88,31 @@ const pages = [
 			{
 				path: '',
 				component: ProfileReview,
-				title: 'Profile Review - Dashboard',
-				name: 'profile-review'
+				name: 'profile-review',
+				meta: {
+					title: 'Profile Review - Dashboard',
+					location: 'profile'
+				}
 			},
 			{
 				path: 'edit',
 				component: ProfileEdit,
-				title: 'Edit profile',
-				name: 'profile-edit'
+				name: 'profile-edit',
+				meta: {
+					title: 'Profile Edit',
+					location: 'profile'
+				}
 			}
 		]
+	},
+	{
+		path: '/test-field',
+		name: 'test-field',
+		component: TestField,
+		meta: {
+			title: 'Test FIeld',
+			location: 'test'
+		}
 	}
 ]
 

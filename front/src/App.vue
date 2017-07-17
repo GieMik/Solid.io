@@ -4,7 +4,8 @@
 			<div class="left-bar">
 				<div class="flex-inner vertical">
 					<logo></logo>
-					<left-menu></left-menu>
+					<solid-menu :menuName="'main'"></solid-menu>
+					<solid-menu :menuName="'test'"></solid-menu>
 					<site-info></site-info>
 				</div>
 			</div>
@@ -15,7 +16,7 @@
 			</div>
 			<div v-if="interface.rightBar.visible" class="right-bar">
 				<div class="flex-inner">
-					<right-menu></right-menu>
+					<solid-menu :menuName="'profile'"></solid-menu>
 				</div>
 			</div>
 			<div :class="{ 'open': interface.rightBar.visible }" class="account-toggle">
@@ -29,7 +30,7 @@
 				</transition>
 			</div>
 			<div class="footer">
-				<div class="flex-inner flex-end">
+				<div class="flex-inner flex-center">
 					<footer-info></footer-info>
 				</div>
 			</div>
@@ -41,12 +42,11 @@
 	import { mapState } from 'vuex'
 
 	import Logo from '@components/Logo'
-	import LeftMenu from '@components/LeftMenu'
-	import RightMenu from '@components/RightMenu'
 	import SiteInfo from '@components/SiteInfo'
 	import TopHeader from '@components/TopHeader'
 	import FooterInfo from '@components/FooterInfo'
 	import AccountToggle from '@components/AccountToggle'
+	import SolidMenu from '@components/Menu'
 
 	export default {
 		data() {
@@ -56,8 +56,7 @@
 		},
 		components: {
 			Logo,
-			LeftMenu,
-			RightMenu,
+			SolidMenu,
 			SiteInfo,
 			TopHeader,
 			FooterInfo,

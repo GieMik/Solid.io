@@ -1,17 +1,8 @@
 // import Vue from 'vue'
 
-// import {
-// 	getHeader,
-// 	userListUrl
-// } from './../../config'
+import pages from '@configs/pages'
 
 const state = {
-	// leftBar: {
-	//
-	// },
-	// topBar: {
-	//
-	// },
 	rightBar: {
 		visible: false
 	}
@@ -21,21 +12,12 @@ const mutations = {
 	SET_RIGHT_BAR_VISIBLE(state, payload) {
 		state.rightBar.visible = !state.rightBar.visible
 	}
-	// CLEAR_AUTH_USER (state) {
-	// 	state.authUser = null
-	// },
-	// SET_USER_LIST (state, users) {
-	// 	state.users = users
-	// }
 }
 
 const actions = {
 	setRightBarVisible: ({commit}, payload) => {
 		commit('SET_RIGHT_BAR_VISIBLE', payload)
 	}
-	// clearAuthUser: ({commit}) => {
-	// 	commit('CLEAR_AUTH_USER')
-	// },
 	// getUserList: ({commit}) => {
 	// 	return Vue.http.get(userListUrl, {headers: getHeader()})
 	// 		.then(response => {
@@ -51,6 +33,20 @@ const actions = {
 const getters = {
 	getRightBarVisible: (state) => {
 		return state.rightBar.visible
+	},
+	getSpecificMenu: (state, getters) => (menuLocation) => {
+		let menu = []
+		pages.map(x => {
+			if (x.meta) {
+				console.log(x.meta)
+				if (x.meta.location === menuLocation) menu.push(x)
+			} else if (x.children) {
+				x.children.map(c => {
+					if (c.meta.location === menuLocation) menu.push(c)
+				})
+			}
+		})
+		return menu
 	}
 }
 

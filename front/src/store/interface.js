@@ -5,7 +5,8 @@ import pages from '@configs/pages'
 const state = {
 	rightBar: {
 		visible: false
-	}
+	},
+	myInput: 'Aha'
 }
 
 const mutations = {
@@ -38,7 +39,6 @@ const getters = {
 		let menu = []
 		pages.map(x => {
 			if (x.meta) {
-				console.log(x.meta)
 				if (x.meta.location === menuLocation) menu.push(x)
 			} else if (x.children) {
 				x.children.map(c => {

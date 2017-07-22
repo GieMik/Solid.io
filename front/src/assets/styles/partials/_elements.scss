@@ -24,8 +24,8 @@
 }
 
 .page-title {
-	color: $c2;
-	font-weight: 700;
+	color: $light;
+	font-weight: 300;
 }
 
 path {
@@ -66,7 +66,7 @@ input {
 		width: 100%;
 		display: block;
 		font-weight: 200;
-		color: $c3;
+		color: $red;
 	}
 }
 
@@ -82,5 +82,25 @@ input {
 		background-color: $c2;
 		color: $F;
 		cursor: pointer;
+	}
+}
+
+.account-toggle-icon {
+	height: 50%;
+
+	.user {
+		fill: $light;
+	}
+
+	.bar {
+		fill: $light;
+	}
+
+	&:hover {
+		cursor: pointer;
+
+		.user {
+			fill: $c2;
+		}
 	}
 }

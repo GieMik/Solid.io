@@ -1,5 +1,5 @@
 <template>
-	<div class="top-header-wrapper flex-center">
+	<div class="top-header-wrapper flex-start">
 		<h1 class="page-title">{{ pageTitle }}</h1>
 	</div>
 </template>

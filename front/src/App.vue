@@ -3,38 +3,47 @@
 		<div class="body-wrapper">
 			<div class="left-bar">
 				<div class="flex-inner vertical">
-					<logo></logo>
 					<solid-menu :menuName="'main'"></solid-menu>
 					<solid-menu :menuName="'test'"></solid-menu>
 					<site-info></site-info>
 				</div>
 			</div>
 			<div class="top-bar">
-				<div class="flex-inner horizontal">
+				<div class="grid-inner">
+					<logo></logo>
 					<top-header></top-header>
+					<account-toggle @click.native="openRightBar" ></account-toggle>
 				</div>
 			</div>
-			<div v-if="interface.rightBar.visible" class="right-bar">
-				<div class="flex-inner">
-					<solid-menu :menuName="'profile'"></solid-menu>
-				</div>
+			<div class="profile-menu">
+				<transition name="fade">
+					<solid-menu v-if="interface.rightBar.visible" :menuName="'profile'"></solid-menu>
+				</transition>
 			</div>
-			<div :class="{ 'open': interface.rightBar.visible }" class="account-toggle">
-				<div @click="openRightBar" class="flex-inner flex-center">
-					<account-toggle ></account-toggle>
-				</div>
-			</div>
+			<!--<div v-if="interface.rightBar.visible" class="right-bar">-->
+				<!--<div class="flex-inner">-->
+
+				<!--</div>-->
+			<!--</div>-->
+			<!--<div :class="{ 'open': interface.rightBar.visible }" class="account-toggle">-->
+				<!--<div @click="openRightBar" class="flex-inner flex-center">-->
+
+				<!--</div>-->
+			<!--</div>-->
 			<div class="content">
 				<transition name="fade" mode="out-in">
 					<router-view></router-view>
 				</transition>
 			</div>
 			<div class="footer">
-				<div class="flex-inner flex-center">
+				<div class="flex-inner flex-end">
 					<footer-info></footer-info>
 				</div>
 			</div>
 		</div>
+		<!--<div class="body-fixed">-->
+			<!--<modal @click.native="close" v-if="modal"></modal>-->
+		<!--</div>-->
 	</div>
 </template>
 
@@ -47,11 +56,13 @@
 	import FooterInfo from '@components/FooterInfo'
 	import AccountToggle from '@components/AccountToggle'
 	import SolidMenu from '@components/Menu'
+	import Modal from '@components/Modal'
 
 	export default {
 		data() {
 			return {
 //				logo: Logo,
+				modal: true
 			}
 		},
 		components: {
@@ -60,7 +71,8 @@
 			SiteInfo,
 			TopHeader,
 			FooterInfo,
-			AccountToggle
+			AccountToggle,
+			Modal
 		},
 		computed: {
 			...mapState({
@@ -70,6 +82,9 @@
 		methods: {
 			openRightBar() {
 				this.$store.dispatch('setRightBarVisible', true)
+			},
+			close() {
+				this.modal = false
 			}
 		}
 	}

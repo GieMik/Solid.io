@@ -9,10 +9,12 @@
 	</div>
 </template>
 
-<style lang="css" type="text/css" scoped>
+<style lang="scss" type="text/css" scoped>
+
+	@import '../assets/styles/partials/_variables.scss';
 
 	.st0{
-		fill: #55585D;
+		fill: $light;
 	}
 
 	.st1{
@@ -24,7 +26,7 @@
 	}
 
 	.st3{
-		fill: #6ED3CF;
+		fill: $light;
 	}
 
 	.st4{

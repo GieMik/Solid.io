@@ -7,6 +7,9 @@ import router from './router'
 import store from './store'
 import VueHead from 'vue-head'
 import { siteName, titleSeparator } from '@configs'
+// import axios from 'axios'
+
+import AxiosPlugin from '@helpers/axios.js'
 
 const dictionary = {
 	en: {
@@ -28,6 +31,8 @@ Vue.use(VueHead, {
 	separator: ' | ',
 	complement: 'Solid.io'
 })
+
+Vue.use(AxiosPlugin)
 
 Vue.config.productionTip = false
 

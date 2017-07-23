@@ -2,8 +2,6 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
-const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
-// const fallback = require('fallback-loader')
 
 function resolve(dir) {
 	return path.join(__dirname, '..', dir)
@@ -59,12 +57,15 @@ module.exports = {
 				include: [resolve('src'), resolve('test')]
 			},
 			{
-				test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+				test: /\.(png|jpe?g|gif)(\?.*)?$/,
 				loader: 'url-loader',
 				options: {
 				  limit: 10000,
 				  name: utils.assetsPath('img/[name].[hash:7].[ext]')
 				}
+			},
+			{test: /\.svg$/,
+				loader: 'svg-loader'
 			},
 			// {
 			// 	test: /\.svg$/,
@@ -91,8 +92,5 @@ module.exports = {
 				}
 			}
 		]
-	},
-	plugins: [
-		new SpriteLoaderPlugin()
-	]
+	}
 }

@@ -106,7 +106,14 @@
 					if (result) {
 						// eslint-disable-next-line
 						if (this.password === this.repeatPassword) {
-							this.$http.get(postSignUp)
+							let register = {
+								name: this.name,
+								surname: this.surname,
+								email: this.email,
+								password: this.password
+							}
+
+							this.$http.post(postSignUp, register)
 								.then(response => {
 									console.log(response)
 								})

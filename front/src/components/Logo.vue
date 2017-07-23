@@ -10,29 +10,23 @@
 </template>
 
 <style lang="scss" type="text/css" scoped>
-
 	@import '../assets/styles/partials/_variables.scss';
 
 	.st0{
 		fill: $light;
 	}
-
 	.st1{
 		font-family: 'cream-DEMO';
 	}
-
 	.st2{
 		font-size: 258.9563px;
 	}
-
 	.st3{
 		fill: $light;
 	}
-
 	.st4{
 		font-family: 'Bitter';
 	}
-
 	.st5{
 		font-size: 151.7498px;
 	}

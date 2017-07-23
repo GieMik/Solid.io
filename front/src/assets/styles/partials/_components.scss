@@ -18,10 +18,10 @@
 .profile-menu-wrapper {
 	text-align: center;
 	flex-basis: 100%;
-	//padding: 0 15px;
 	display: flex;
 	flex-direction: column;
 	background-color: $light;
+	border: solid 1px darken($light, 10%);
 
 	.p-info {
 		color: $F;
@@ -60,57 +60,58 @@ ul, ol {
 			display: block;
 
 			&:hover {
-				background-color: darken($light, 3%);
-				color: $c2;
+				background-color: darken($light, 5%);
+				//color: $c2;
 			}
 		}
 	}
 }
 
 .login-page-wrapper {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	//display: flex;
+	//justify-content: center;
+	//align-items: center;
 	width: 100%;
 	height: 100%;
 }
 
 .form-wrapper {
-	background-color: $F;
+	//background-color: $F;
 	//border: solid 1px $c2;
 
 	&.form-md {
 		width: 500px;
 	}
 
+	&.form-lg {
+		width: 700px;
+	}
+
 	.form-header {
-		padding:  15px 20px;
-		background-color: $c2;
-		border-top-left-radius: 5px;
-		border-top-right-radius: 5px;
+		//padding:  15px 20px;
+		//background-color: $c2;
+		//border-top-left-radius: 5px;
+		//border-top-right-radius: 5px;
 	}
 
 	.form-title {
-		color: $F;
+		color: $dark;
+		font-size: 40px;
+		font-weight: 400;
 	}
 
 	.form-body {
-		padding:  15px 20px;
-		border: solid 1px $c2;
+		padding: 15px 0;
+		//border: solid 1px $c2;
 		border-bottom: none;
 	}
 
 	.form-footer {
-		background-color: $light;
-		border: solid 1px $c2;
+		//background-color: $light;
+		//border: solid 1px $c2;
 		border-top: none;
 		border-bottom-left-radius: 5px;
 		border-bottom-right-radius: 5px;
-	}
-
-	.form-footer {
-		padding:  15px 20px;
-		text-align: center;
 	}
 }
 

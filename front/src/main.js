@@ -2,11 +2,25 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import VeeValidate from 'vee-validate'
+import VeeValidate, { Validator } from 'vee-validate'
 import router from './router'
 import store from './store'
 import VueHead from 'vue-head'
 import { siteName, titleSeparator } from '@configs'
+
+const dictionary = {
+	en: {
+		attributes: {
+			name: '"Name"',
+			surname: '"Surname"',
+			repeatPassword: '"Repeat Password"',
+			email: '"Email"',
+			password: '"Password"'
+		}
+	}
+}
+
+Validator.updateDictionary(dictionary)
 
 Vue.use(VeeValidate)
 

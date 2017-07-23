@@ -43,6 +43,16 @@ input {
 	}
 }
 
+.f-group {
+	display: flex;
+	justify-content: space-between;
+
+	.f-field {
+		flex-basis: 48%;
+		//flex-grow: 1;
+	}
+}
+
 .f-field {
 	@extend .sans-serif;
 	margin: 0 0 30px;
@@ -52,6 +62,16 @@ input {
 		font-weight: 200;
 		margin-bottom: 5px;
 		display: block;
+		opacity: 0;
+		transform: translate(-10px, 0);
+		transition: $btnTrans;
+		color: $c1;
+
+		&.not-empty {
+			opacity: 1;
+			transform: translate(0, 0);
+			transition: $btnTrans;
+		}
 	}
 
 	input {
@@ -59,6 +79,12 @@ input {
 		border: none;
 		border-bottom: solid 1px darken($light, 15%);
 		padding: 8px 10px;
+		transition: $btnTrans;
+
+		&:focus {
+			border-bottom: solid 1px darken($light, 30%);
+			transition: $btnTrans;
+		}
 	}
 
 	.help {
@@ -70,16 +96,35 @@ input {
 	}
 }
 
+*::-webkit-input-placeholder {
+	color: darken($F, 30%);
+}
+
+*:-moz-placeholder {
+	/* FF 4-18 */
+	color: darken($F, 30%);
+}
+
+*::-moz-placeholder {
+	/* FF 19+ */
+	color: darken($F, 30%);
+}
+
+*:-ms-input-placeholder {
+	/* IE 10+ */
+	color: darken($F, 30%);
+}
+
 .btn {
-	border: solid 1px $c2;
+	border: solid 1px $c1;
 	background: $F;
 	padding: 10px 15px;
 	border-radius: 5px;
 	font-weight: 700;
-	color: $c2;
+	color: $c1;
 
 	&:hover {
-		background-color: $c2;
+		background-color: $c1;
 		color: $F;
 		cursor: pointer;
 	}

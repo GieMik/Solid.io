@@ -1,5 +1,6 @@
 <template>
 	<div id="app">
+		<icons></icons>
 		<div class="body-wrapper">
 			<div class="left-bar">
 				<div class="flex-inner vertical">
@@ -20,16 +21,6 @@
 					<solid-menu v-if="interface.rightBar.visible" :menuName="'profile'"></solid-menu>
 				</transition>
 			</div>
-			<!--<div v-if="interface.rightBar.visible" class="right-bar">-->
-				<!--<div class="flex-inner">-->
-
-				<!--</div>-->
-			<!--</div>-->
-			<!--<div :class="{ 'open': interface.rightBar.visible }" class="account-toggle">-->
-				<!--<div @click="openRightBar" class="flex-inner flex-center">-->
-
-				<!--</div>-->
-			<!--</div>-->
 			<div class="content">
 				<transition name="fade" mode="out-in">
 					<router-view></router-view>
@@ -57,6 +48,8 @@
 	import AccountToggle from '@components/AccountToggle'
 	import SolidMenu from '@components/Menu'
 	import Modal from '@components/Modal'
+	import Icons from '@components/Icons'
+//	import LogoSvg from '@svgs/Solid.svg'
 
 	export default {
 		data() {
@@ -72,7 +65,11 @@
 			TopHeader,
 			FooterInfo,
 			AccountToggle,
-			Modal
+			Modal,
+			Icons
+		},
+		created() {
+//			console.log(LogoSvg)
 		},
 		computed: {
 			...mapState({

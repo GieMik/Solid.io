@@ -2,6 +2,7 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 // const fallback = require('fallback-loader')
 
 function resolve(dir) {
@@ -58,16 +59,29 @@ module.exports = {
 				include: [resolve('src'), resolve('test')]
 			},
 			{
-				test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+				test: /\.(png|jpe?g|gif)(\?.*)?$/,
 				loader: 'url-loader',
 				options: {
 				  limit: 10000,
 				  name: utils.assetsPath('img/[name].[hash:7].[ext]')
 				}
 			},
-			// { 	test: /\.svg$/,
-			// 	loader: 'svg-loader'
+			// {
+			// 	test: /\.svg$/,
+			// 	loader: 'svg-sprite-loader',
+			// 	// include: path.resolve('./img/flags'),
+			// 	options: {
+			// 		extract: true,
+			// 		spriteFilename: 'flags-sprite.svg'
+			// 	}
 			// },
+			{ 	test: /\.svg$/,
+				loader: 'svg-inline-loader',
+				options: {
+					removeTags: true,
+					removingTags: ['style', 'id']
+				}
+			},
 			{
 				test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
 				loader: 'url-loader',
@@ -77,5 +91,8 @@ module.exports = {
 				}
 			}
 		]
-	}
+	},
+	plugins: [
+		new SpriteLoaderPlugin()
+	]
 }

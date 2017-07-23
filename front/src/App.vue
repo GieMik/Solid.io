@@ -12,16 +12,11 @@
 			<div class="top-bar">
 				<div class="grid-inner">
 					<logo></logo>
-					<top-header></top-header>
 					<account-toggle @click.native="openRightBar" ></account-toggle>
 				</div>
 			</div>
-			<div class="profile-menu">
-				<transition name="fade">
-					<solid-menu v-if="interface.rightBar.visible" :menuName="'profile'"></solid-menu>
-				</transition>
-			</div>
 			<div class="content">
+				<top-header></top-header>
 				<transition name="fade" mode="out-in">
 					<router-view></router-view>
 				</transition>

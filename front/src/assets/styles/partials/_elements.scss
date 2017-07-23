@@ -23,8 +23,14 @@
 	font-weight: 200;
 }
 
+.top-header-wrapper {
+	border-bottom: solid 1px $c1;
+	margin: 0 0 20px;
+	padding: 0 0 10px;
+}
+
 .page-title {
-	color: $light;
+	color: $dark;
 	font-weight: 300;
 }
 

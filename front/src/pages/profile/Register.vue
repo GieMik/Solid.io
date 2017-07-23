@@ -2,7 +2,7 @@
 	<div class="login-page-wrapper">
 		<div class="login-form form-lg form-wrapper">
 			<div class="form-header">
-				<h2 class="form-title">Fill The Form..</h2>
+				<h2 class="form-title">Please fill The Form..</h2>
 			</div>
 			<div class="form-body">
 				<div class="f-group horizontal">

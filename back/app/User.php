@@ -6,6 +6,20 @@ use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
+/**
+ * Class User
+ *
+ * @property integer $id
+ * @property string $name
+ * @property string $surname
+ * @property string $email
+ * @property string $password
+ * @property string $remember_token
+ * @property string $created_at
+ * @property string $updated_at
+ *
+ * @package App
+ */
 class User extends Authenticatable
 {
     use HasApiTokens, Notifiable;
@@ -16,7 +30,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'surname', 'email', 'password',
     ];
 
     /**

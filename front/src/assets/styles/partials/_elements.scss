@@ -55,7 +55,6 @@ input {
 
 	.f-field {
 		flex-basis: 48%;
-		//flex-grow: 1;
 	}
 }
 
@@ -103,22 +102,22 @@ input {
 }
 
 *::-webkit-input-placeholder {
-	color: darken($F, 30%);
+	color: $dark;
 }
 
 *:-moz-placeholder {
 	/* FF 4-18 */
-	color: darken($F, 30%);
+	color: $dark;
 }
 
 *::-moz-placeholder {
 	/* FF 19+ */
-	color: darken($F, 30%);
+	color: $dark;
 }
 
 *:-ms-input-placeholder {
 	/* IE 10+ */
-	color: darken($F, 30%);
+	color: $dark;
 }
 
 .btn {

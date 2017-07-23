@@ -85,15 +85,20 @@
 </template>
 
 <script>
+	import { postSignUp } from '@configs/rest'
+
 	export default {
 		data() {
 			return {
-				name: '',
-				surname: '',
-				email: '',
-				password: '',
-				repeatPassword: ''
+				name: 'Giedrius',
+				surname: 'Mikoliunas',
+				email: 'giemik@gmail.com',
+				password: 'asasas',
+				repeatPassword: 'asasas'
 			}
+		},
+		created() {
+			console.log(this.$http ? 'Axios works!' : 'Uh oh..')
 		},
 		methods: {
 			validateForm() {
@@ -101,7 +106,10 @@
 					if (result) {
 						// eslint-disable-next-line
 						if (this.password === this.repeatPassword) {
-							alert('Form Submitted!')
+							this.$http.get(postSignUp)
+								.then(response => {
+									console.log(response)
+								})
 						} else {
 							alert('Password is not equal to RepeatPassword')
 						}

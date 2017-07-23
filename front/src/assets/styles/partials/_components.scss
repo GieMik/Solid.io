@@ -61,7 +61,13 @@ ul, ol {
 
 			&:hover {
 				background-color: darken($light, 5%);
-				//color: $c2;
+			}
+		}
+
+		&.active {
+			a {
+				color: $red;
+				background-color: darken($light, 5%);
 			}
 		}
 	}
@@ -95,8 +101,8 @@ ul, ol {
 	}
 
 	.form-title {
-		color: $dark;
-		font-size: 30px;
+		color: lighten($dark, 30%);
+		font-size: 20px;
 		font-weight: 400;
 	}
 

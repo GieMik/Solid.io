@@ -20,7 +20,7 @@
 				<div class="f-field">
 					<label class="label" for="password">Password</label>
 					<input
-						v-validate="'required|password'"
+						v-validate="'required'"
 						:class="{'input': true, 'is-danger': errors.has('password') }"
 						name="password"
 						type="password"

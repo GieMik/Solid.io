@@ -59,7 +59,7 @@ module.exports = {
 				include: [resolve('src'), resolve('test')]
 			},
 			{
-				test: /\.(png|jpe?g|gif)(\?.*)?$/,
+				test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
 				loader: 'url-loader',
 				options: {
 				  limit: 10000,
@@ -75,13 +75,13 @@ module.exports = {
 			// 		spriteFilename: 'flags-sprite.svg'
 			// 	}
 			// },
-			{ 	test: /\.svg$/,
-				loader: 'svg-inline-loader',
-				options: {
-					removeTags: true,
-					removingTags: ['style', 'id']
-				}
-			},
+			// { 	test: /\.svg$/,
+			// 	loader: 'svg-inline-loader',
+			// 	options: {
+			// 		removeTags: true,
+			// 		removingTags: ['style', 'id']
+			// 	}
+			// },
 			{
 				test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
 				loader: 'url-loader',

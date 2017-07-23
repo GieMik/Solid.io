@@ -5,5 +5,6 @@ import pages from '@configs/pages'
 Vue.use(Router)
 
 export default new Router({
-	routes: pages
+	routes: pages,
+	linkExactActiveClass: 'active'
 })

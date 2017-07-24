@@ -7,8 +7,7 @@ import router from './router'
 import store from './store'
 import VueHead from 'vue-head'
 import { siteName, titleSeparator } from '@configs'
-// import axios from 'axios'
-
+import { mixin } from '@helpers/mixins'
 import AxiosPlugin from '@helpers/axios.js'
 
 const dictionary = {
@@ -25,19 +24,18 @@ const dictionary = {
 
 Validator.updateDictionary(dictionary)
 
-Vue.use(VeeValidate)
-
-Vue.use(VueHead, {
-	separator: ' | ',
-	complement: 'Solid.io'
-})
-
-Vue.use(AxiosPlugin)
-
 Vue.config.productionTip = false
 
 router.afterEach((to) => {
 	document.title = to.meta.title + titleSeparator + siteName
+})
+
+Vue.use(VeeValidate)
+Vue.use(AxiosPlugin)
+Vue.mixin(mixin)
+Vue.use(VueHead, {
+	separator: ' | ',
+	complement: 'Solid.io'
 })
 
 /* eslint-disable no-new */

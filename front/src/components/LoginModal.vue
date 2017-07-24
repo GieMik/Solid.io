@@ -1,6 +1,9 @@
 <template>
-	<div class="login-page-wrapper">
-		<div class="login-form form-md form-wrapper">
+	<modal :size="'medium'" :name="'loginModal'">
+		<div class="m-header">
+			<h1 class="m-title">This is Modal</h1>
+		</div>
+		<div class="m-body">
 			<form @submit.prevent="validateForm">
 				<div class="form-header">
 					<h2 class="form-title">Please login..</h2>
@@ -12,7 +15,6 @@
 							v-validate="'required|email'"
 							:class="{'input': true, 'is-danger': errors.has('email') }"
 							name="email"
-							type="text"
 							placeholder="Email">
 						<span
 							v-show="errors.has('email')"
@@ -31,21 +33,23 @@
 							class="help is-danger">{{ errors.first('password') }}</span>
 					</div>
 				</div>
-				<div class="form-footer">
+				<div class="form-footer flex-center">
 					<button class="btn">Login</button>
 				</div>
 			</form>
 		</div>
-	</div>
+		<div class="m-footer flex-center">
+			<i>Press "Esc" to close modal</i>
+		</div>
+	</modal>
 </template>
 
 <script>
+	import Modal from '@components/Modal'
+
 	export default {
-		data() {
-			return {
-				email: '',
-				password: ''
-			}
+		components: {
+			Modal
 		},
 		methods: {
 			validateForm() {

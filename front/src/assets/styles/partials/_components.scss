@@ -122,17 +122,39 @@ ul, ol {
 }
 
 .modal-wrapper {
-	background-color: rgba($B, .2);
-	grid-column: 1 / -1;
-	grid-row: 1 / -1;
-	grid-template-columns: repeat(20, [col-start] 1fr [col-end]);
-	grid-template-rows: $topHeight auto $bottomHeight;
-	display: grid;
-	//pointer-events: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba($B, .2)
 }
 
 .modal {
 	background-color: $F;
-	grid-column: 4 / -4;
-	grid-row: 2 / 3;
+	width: 500px;
+	box-shadow: 0 0 30px rgba($B, .2);
+	margin: 20px 0 100px;
+	animation: modal $pageTrans ease-out;
+
+	&.modal-lg {
+		width: 800px;
+	}
+
+	.m-header,
+	.m-body,
+	.m-footer {
+		padding: 30px 50px;
+	}
+
+	.m-header {
+		text-align: center;
+	}
+
+	.m-title {
+
+	}
 }

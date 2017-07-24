@@ -9,6 +9,7 @@
 				:to="{ name: item.name}">
 				<a>{{ item.meta.title }}</a>
 			</router-link>
+			<li class="m-item" @click="openModal('loginModal')" v-if="this.menuName === 'profile'"><a href="#">Open Modal</a></li>
 		</ul>
 	</div>
 </template>

@@ -27,14 +27,14 @@
 				</div>
 			</div>
 		</div>
-		<!--<div class="body-fixed">-->
-			<!--<modal @click.native="close" v-if="modal"></modal>-->
-		<!--</div>-->
+		<div class="body-fixed">
+			<login-modal v-if="modal.loginModal.open"></login-modal>
+		</div>
 	</div>
 </template>
 
 <script>
-	import { mapState } from 'vuex'
+	import { mapState, mapGetters } from 'vuex'
 
 	import Logo from '@components/Logo'
 	import SiteInfo from '@components/SiteInfo'
@@ -42,15 +42,13 @@
 	import FooterInfo from '@components/FooterInfo'
 	import AccountToggle from '@components/AccountToggle'
 	import SolidMenu from '@components/Menu'
-	import Modal from '@components/Modal'
+	import LoginModal from '@components/LoginModal'
 	import Icons from '@components/Icons'
 //	import LogoSvg from '@svgs/Solid.svg'
 
 	export default {
 		data() {
 			return {
-//				logo: Logo,
-				modal: true
 			}
 		},
 		components: {
@@ -60,13 +58,13 @@
 			TopHeader,
 			FooterInfo,
 			AccountToggle,
-			Modal,
+			LoginModal,
 			Icons
 		},
-		created() {
-//			console.log(LogoSvg)
-		},
 		computed: {
+			...mapGetters({
+				modal: 'getModalState'
+			}),
 			...mapState({
 				interface: state => state.interfaceStore
 			})
@@ -74,9 +72,6 @@
 		methods: {
 			openRightBar() {
 				this.$store.dispatch('setRightBarVisible', true)
-			},
-			close() {
-				this.modal = false
 			}
 		}
 	}

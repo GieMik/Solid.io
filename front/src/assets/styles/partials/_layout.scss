@@ -161,11 +161,8 @@ body {
 	bottom: 0;
 	left: 0;
 	pointer-events: none;
-	//background-color: rgba($B, .1);
 	z-index: 4000;
-	display: grid;
-	grid-template-columns: repeat(20, [col-start] 1fr [col-end]);
-	grid-template-rows: $topHeight auto $bottomHeight;
+	display: flex;
 
 	& * {
 		pointer-events: auto;

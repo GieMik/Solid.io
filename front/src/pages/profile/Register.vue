@@ -97,9 +97,6 @@
 				repeatPassword: 'asasas'
 			}
 		},
-		created() {
-			console.log(this.$http ? 'Axios works!' : 'Uh oh..')
-		},
 		methods: {
 			validateForm() {
 				this.$validator.validateAll().then(result => {
@@ -118,7 +115,7 @@
 									console.log(response)
 								})
 						} else {
-							alert('Password is not equal to RepeatPassword')
+							alert('Password is not equal to Repeat Password')
 						}
 					}
 				})

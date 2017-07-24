@@ -6,18 +6,38 @@ const state = {
 	rightBar: {
 		visible: false
 	},
-	myInput: 'Aha'
+	myInput: 'Aha',
+	modal: {
+		open: false,
+		loginModal: {
+			open: false
+		}
+	}
 }
 
 const mutations = {
-	SET_RIGHT_BAR_VISIBLE(state, payload) {
+	SET_RIGHT_BAR_VISIBLE(state) {
 		state.rightBar.visible = !state.rightBar.visible
+	},
+	SET_MODAL_OPEN(state, payload) {
+		state.modal.open = true
+		state.modal[payload].open = true
+	},
+	SET_MODAL_CLOSE(state, payload) {
+		state.modal.open = false
+		state.modal[payload].open = false
 	}
 }
 
 const actions = {
 	setRightBarVisible: ({commit}, payload) => {
 		commit('SET_RIGHT_BAR_VISIBLE', payload)
+	},
+	setModalOpen: ({commit}, payload) => {
+		commit('SET_MODAL_OPEN', payload)
+	},
+	setModalClose: ({commit}, payload) => {
+		commit('SET_MODAL_CLOSE', payload)
 	}
 	// getUserList: ({commit}) => {
 	// 	return Vue.http.get(userListUrl, {headers: getHeader()})
@@ -34,6 +54,9 @@ const actions = {
 const getters = {
 	getRightBarVisible: (state) => {
 		return state.rightBar.visible
+	},
+	getModalState: (state) => {
+		return state.modal
 	},
 	getSpecificMenu: (state, getters) => (menuLocation) => {
 		let menu = []

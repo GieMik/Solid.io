@@ -12,6 +12,7 @@
 							v-validate="'required|email'"
 							:class="{'input': true, 'is-danger': errors.has('email') }"
 							name="email"
+							v-model="email"
 							placeholder="Email">
 						<span
 							v-show="errors.has('email')"
@@ -23,6 +24,7 @@
 							v-validate="'required'"
 							:class="{'input': true, 'is-danger': errors.has('password') }"
 							name="password"
+							v-model="password"
 							type="password"
 							placeholder="Password">
 						<span
@@ -43,14 +45,34 @@
 
 <script>
 	import Modal from '@components/Modal'
+	import { postSignIn } from '@configs/rest'
 
 	export default {
 		components: {
 			Modal
 		},
+		data() {
+			return {
+				email: '',
+				password: ''
+			}
+		},
 		methods: {
 			validateForm() {
 				console.log('validating')
+				this.$validator.validateAll().then(result => {
+					if (result) {
+						let login = {
+							email: this.email,
+							password: this.password
+						}
+
+						this.axios.post(postSignIn, login)
+							.then(response => {
+								console.log(response)
+							})
+					}
+				})
 			}
 		}
 	}

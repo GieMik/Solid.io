@@ -12,6 +12,7 @@
 							v-validate="'required|email'"
 							:class="{'input': true, 'is-danger': errors.has('email') }"
 							name="email"
+							v-model="email"
 							type="text"
 							placeholder="Email">
 						<span
@@ -24,6 +25,7 @@
 							v-validate="'required'"
 							:class="{'input': true, 'is-danger': errors.has('password') }"
 							name="password"
+							v-model="password"
 							type="password"
 							placeholder="Password">
 						<span
@@ -40,6 +42,8 @@
 </template>
 
 <script>
+	import { postSignIn } from '@configs/rest'
+
 	export default {
 		data() {
 			return {
@@ -49,7 +53,19 @@
 		},
 		methods: {
 			validateForm() {
-				console.log('validating')
+				this.$validator.validateAll().then(result => {
+					if (result) {
+						let login = {
+							email: this.email,
+							password: this.password
+						}
+
+						this.axios.post(postSignIn, login)
+							.then(response => {
+								console.log(response)
+							})
+					}
+				})
 			}
 		}
 	}

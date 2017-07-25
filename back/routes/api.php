@@ -21,3 +21,8 @@ Route::post('/post-sign-up', [
     'uses' => 'UserController@postSignUp',
     'as' => 'post-sign-up',
 ]);
+
+Route::post('/post-sign-in', [
+    'uses' => 'UserController@postSignIn',
+    'as' => 'post-sign-in',
+]);

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\JsonResponse;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Validator;
 
 /**
@@ -16,6 +18,8 @@ use Illuminate\Support\Facades\Validator;
  */
 class UserController extends Controller
 {
+    use AuthenticatesUsers;
+
     /**
      * Signs up new user
      *
@@ -49,5 +53,30 @@ class UserController extends Controller
             'success' => true,
             'errors' => '',
         ]);
+    }
+
+    /**
+     * Signs in user
+     *
+     * @param Request $request
+     * @return mixed
+     */
+    public function postSignIn(Request $request)
+    {
+        $email = $request['email'];
+        $password = $request['password'];
+
+        $request->request->add([
+            'username' => $email,
+            'password' => $password,
+            'grant_type' => 'password',
+            'client_id' => env('API_CLIENT_ID'),
+            'client_secret' => env('API_CLIENT_SECRET'),
+            'scope' => '*',
+        ]);
+
+        $tokenRequest = Request::create(env('APP_URL') . '/oauth/token', 'post');
+
+        return Route::dispatch($tokenRequest)->getContent();
     }
 }

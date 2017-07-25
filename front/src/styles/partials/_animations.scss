@@ -4,14 +4,3 @@
 .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
 	opacity: 0;
 }
-
-@keyframes modal {
-	0% {
-		opacity: 0;
-		transform: translate(0, 20px)
-	}
-	100% {
-		opacity: 0;
-		transform: translate(0, 0)
-	}
-}

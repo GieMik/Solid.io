@@ -10,7 +10,7 @@
 </template>
 
 <style lang="scss" type="text/css" scoped>
-	@import '../assets/styles/partials/_variables.scss';
+	@import '../styles/partials/_variables.scss';
 
 	.st0{
 		fill: $light;

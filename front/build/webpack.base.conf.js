@@ -27,12 +27,13 @@ module.exports = {
 			'@configs': resolve('src/configs'),
 			'@helpers': resolve('src/helpers'),
 			'@pages': resolve('src/pages'),
-			'@styles': resolve('src/assets/styles'),
+			'@styles': resolve('src/styles'),
 			'@svgs': resolve('src/assets/svgs'),
 			'@fonts': resolve('src/assets/fonts'),
 			'@icons': resolve('src/assets/icons'),
 			'@images': resolve('src/assets/images'),
-			'@components': resolve('src/components')
+			'@components': resolve('src/components'),
+			'@instances': resolve('src/instances')
 		}
 	},
 	module: {

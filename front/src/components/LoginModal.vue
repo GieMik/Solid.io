@@ -1,13 +1,10 @@
 <template>
 	<modal :size="'medium'" :name="'loginModal'">
 		<div class="m-header">
-			<h1 class="m-title">This is Modal</h1>
+			<h1 class="m-title">Please login..</h1>
 		</div>
 		<div class="m-body">
 			<form @submit.prevent="validateForm">
-				<div class="form-header">
-					<h2 class="form-title">Please login..</h2>
-				</div>
 				<div class="form-body">
 					<div class="f-field">
 						<label class="label" for="email">Email</label>

@@ -1,12 +1,13 @@
 // import Vue from 'vue'
 
 import pages from '@configs/pages'
+import Alert from '@instances/alert.js'
 
 const state = {
 	rightBar: {
 		visible: false
 	},
-	myInput: 'Aha',
+	alerts: [],
 	modal: {
 		open: false,
 		loginModal: {
@@ -26,6 +27,14 @@ const mutations = {
 	SET_MODAL_CLOSE(state, payload) {
 		state.modal.open = false
 		state.modal[payload].open = false
+	},
+	ADD_ALERT(state, payload) {
+		let newAlert = new Alert(payload)
+		newAlert['id'] = state.alerts.length
+		state.alerts.push(newAlert)
+	},
+	CLOSE_ALERT(state, id) {
+		state.alerts.find(x => x.id === id).active = false
 	}
 }
 
@@ -38,6 +47,12 @@ const actions = {
 	},
 	setModalClose: ({commit}, payload) => {
 		commit('SET_MODAL_CLOSE', payload)
+	},
+	addAlert({commit}, payload) {
+		commit('ADD_ALERT', payload)
+	},
+	closeAlert({commit}, id) {
+		commit('CLOSE_ALERT', id)
 	}
 	// getUserList: ({commit}) => {
 	// 	return Vue.http.get(userListUrl, {headers: getHeader()})
@@ -70,6 +85,9 @@ const getters = {
 			}
 		})
 		return menu
+	},
+	getAlerts(state) {
+		return state.alerts
 	}
 }
 

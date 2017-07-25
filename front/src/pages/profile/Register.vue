@@ -110,7 +110,7 @@
 								password: this.password
 							}
 
-							this.$http.post(postSignUp, register)
+							this.axios.post(postSignUp, register)
 								.then(response => {
 									console.log(response)
 								})

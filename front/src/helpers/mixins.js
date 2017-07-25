@@ -5,6 +5,12 @@ export const mixin = {
 		},
 		closeModal(modalName) {
 			this.$store.dispatch('setModalClose', modalName)
+		},
+		callAlert(alert) {
+			this.$store.dispatch('addAlert', alert)
+		},
+		closeAlert(alert) {
+			this.$store.dispatch('closeAlert', alert)
 		}
 	}
 }

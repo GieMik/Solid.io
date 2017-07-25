@@ -8,7 +8,10 @@ import store from './store'
 import VueHead from 'vue-head'
 import { siteName, titleSeparator } from '@configs'
 import { mixin } from '@helpers/mixins'
-import AxiosPlugin from '@helpers/axios.js'
+// import AxiosPlugin from '@helpers/axios.js'
+import VueAxios from 'vue-axios'
+import Axios from 'axios'
+import { baseUrl } from '@configs/rest'
 
 const dictionary = {
 	en: {
@@ -30,8 +33,10 @@ router.afterEach((to) => {
 	document.title = to.meta.title + titleSeparator + siteName
 })
 
+Axios.defaults.baseURL = baseUrl
+
 Vue.use(VeeValidate)
-Vue.use(AxiosPlugin)
+Vue.use(VueAxios, Axios)
 Vue.mixin(mixin)
 Vue.use(VueHead, {
 	separator: ' | ',

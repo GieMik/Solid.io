@@ -130,7 +130,7 @@ ul, ol {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background-color: rgba($B, .2)
+	background-color: rgba($B, .2);
 }
 
 .modal {
@@ -138,7 +138,6 @@ ul, ol {
 	width: 500px;
 	box-shadow: 0 0 30px rgba($B, .2);
 	margin: 20px 0 100px;
-	animation: modal $pageTrans ease-out;
 
 	&.modal-lg {
 		width: 800px;
@@ -156,5 +155,22 @@ ul, ol {
 
 	.m-title {
 
+	}
+}
+
+.alerts-wrapper {
+	flex-basis: 100%;
+	align-self: flex-end;
+}
+
+.alert {
+	background-color: rgba($dark, .8);
+	text-align: center;
+	margin: 0;
+	padding: 20px;
+	color: $F;
+
+	p {
+		margin: 0;
 	}
 }

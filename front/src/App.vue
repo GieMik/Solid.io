@@ -28,13 +28,16 @@
 			</div>
 		</div>
 		<div class="body-fixed">
-			<login-modal v-if="modal.loginModal.open"></login-modal>
+			<transition name="fade">
+				<login-modal v-if="modal.loginModal.open"></login-modal>
+			</transition>
+			<alerts></alerts>
 		</div>
 	</div>
 </template>
 
 <script>
-	import { mapState, mapGetters } from 'vuex'
+	import { mapGetters } from 'vuex'
 
 	import Logo from '@components/Logo'
 	import SiteInfo from '@components/SiteInfo'
@@ -45,6 +48,7 @@
 	import LoginModal from '@components/LoginModal'
 	import Icons from '@components/Icons'
 //	import LogoSvg from '@svgs/Solid.svg'
+	import Alerts from '@components/Alerts'
 
 	export default {
 		data() {
@@ -59,15 +63,17 @@
 			FooterInfo,
 			AccountToggle,
 			LoginModal,
-			Icons
+			Icons,
+			Alerts
 		},
 		computed: {
 			...mapGetters({
-				modal: 'getModalState'
-			}),
-			...mapState({
-				interface: state => state.interfaceStore
+				modal: 'getModalState',
+				alerts: 'getAlerts'
 			})
+//			...mapState({
+//				interface: state => state.interfaceStore
+//			})
 		},
 		methods: {
 			openRightBar() {
